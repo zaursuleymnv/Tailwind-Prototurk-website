@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/2f843758eb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Document</title>
+</head>
+<body class="bg-white dark:!bg-gray-900 dark:text-white h-full flex flex-col sm:bg-pink-300 md:bg-green-300 lg:bg-indigo-300 2xl:bg-red-300">
+    <header class="h-15 w-full border-b border-gray-100 dark:border-gray-700 flex justify-between items-center px-3 lg:px-7 flex-shrink-0">
+        <button onclick="sidebar()" class="text-prototurk lg:hidden dark:text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 -960 960 960" width="28" class="fill-current"><path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg>
+        </button>
+        <a class="navbar-brand inline-flex text-prototurk text-2xl font-medium items-center dark:text-white" href="#">
+            ./Prototurk
+            <span class="text-sm text-gray-400 ml-2 hidden lg:inline-block">v2.5.0</span>
+        </a>
+        <form action="" class="w-1/3 hidden lg:block" role="search">
+            <input class="w-full bg-gray-200 h-10 px-3 placeholder-gray-500 rounded focus:outline-none dark:bg-gray-700 dark:placeholder-gray-300" type="search" placeholder="Search">
+        </form>
+
+            <a href="#" onclick="modal()" class="-mr-[16rem] hidden lg:block bg-prototurk h-10 leading-10 text-white items-center rounded px-[28px] no-underline" data-bs-toggle="modal" data-bs-target="#loginModal">Log In</a>
+
+        <div class="group relative z-20">
+            <button class="flex items-center h-10 rounded text-sm">
+                <img src="img/avatar.png" alt="" class="img-fluid w-7 h-7 rounded-full">
+                <span class="hidden lg:block ml-3">zaursuleymanov</span>      
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" class="fill-current"><path d="M480-360 280-559h400L480-360Z"/></svg>
+            </button>
+            <div tabindex="0" class="opacity-0 invisible group-focus-within:!opacity-100 group-focus-within:!visible group-focus-within:!mt-1 absolute top-full bg-gray-100 dark:bg-gray-800 right-0 w-44 p-1 space-y-1 rounded transition-all">
+                <a href="#" onclick="modal()" class="text-sm flex h-7 items-center px-3 transition-colors hover:bg-gray-200 dark:hover:bg-gray-600 text-black dark:text-white rounded no-underline" data-bs-toggle="modal" data-bs-target="#loginModal">Profile</a>
+                <a href="#" class="text-sm flex h-7 items-center px-3 transition-colors hover:bg-gray-200 dark:hover:bg-gray-600 text-black dark:text-white rounded no-underline">Manage Profile</a>
+                <a href="#" class="text-sm flex h-7 items-center px-3 transition-colors hover:bg-gray-200 dark:hover:bg-gray-600 text-black dark:text-white rounded no-underline">Followers</a>
+                <a href="#" class="text-sm flex h-7 items-center px-3 transition-colors hover:bg-gray-200 dark:hover:bg-gray-600 text-black dark:text-white rounded no-underline">Questions</a>
+                <a href="#" class="text-sm flex h-7 items-center px-3 transition-colors hover:bg-gray-200 dark:hover:bg-gray-600 text-black dark:text-white rounded no-underline">Answers</a>
+                <a href="#" class="text-sm flex h-7 items-center px-3 transition-colors text-red-500 hover:bg-red-100 dark:hover:bg-red-600 dark:hover:text-white rounded no-underline">Exit</a>
+            </div>
+        </div>
+    </header>
+    <main class="flex flex-auto calc-h-full-15 flex-shrink">
+        <div class="container-fluid">
+            <div class="row h-full">
+                <div class="col-lg-3 h-full">
+                    <div class="sidebar active">
+                        <nav class="mb-3 space-y-1">
+                            <a href="#" class="sidebar-nav-link active">Home</a>
+                            <a href="#" class="sidebar-nav-link">Flow</a>
+                            <a href="#" class="sidebar-nav-link">Discover</a>
+                            <a href="#" class="sidebar-nav-link">Articles</a>
+                            <a href="#" class="sidebar-nav-link">Answer & Question</a>
+                        </nav>
+                        <nav class="mt-3 pt-3 space-y-1">
+                            <a href="#" class="sidebar-nav-link">HTML</a>
+                            <a href="#" class="sidebar-nav-link">CSS</a>
+                            <a href="#" class="sidebar-nav-link">Javascript</a>
+                            <a href="#" class="sidebar-nav-link">MySQL</a>
+                            <a href="#" class="sidebar-nav-link">Laravel</a>
+                            <a href="#" class="sidebar-nav-link">Python</a>
+                            <a href="#" class="sidebar-nav-link">Git</a>
+                            <a href="#" class="sidebar-nav-link">C#</a>
+                            <a href="#" class="sidebar-nav-link">TypeScript</a>
+                            <a href="#" class="sidebar-nav-link">React</a>
+                            <a href="#" class="sidebar-nav-link">Jquery</a>
+                        </nav>
+                        <div class="mt-auto pt-3">
+                            <button onclick="darkMode()" href="#" class="bg-gray-800 dark:bg-white hover:bg-gray-700 w-full transition-colors text-white dark:!text-gray-800 text-sm flex items-center px-4 h-10 rounded no-underline">                             
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="fill-current mr-3 w-7 h-7"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q8 0 17 .5t23 1.5q-36 32-56 79t-20 99q0 90 63 153t153 63q52 0 99-18.5t79-51.5q1 12 1.5 19.5t.5 14.5q0 150-105 255T480-120Zm0-60q109 0 190-67.5T771-406q-25 11-53.667 16.5Q688.667-384 660-384q-114.689 0-195.345-80.655Q384-545.311 384-660q0-24 5-51.5t18-62.5q-98 27-162.5 109.5T180-480q0 125 87.5 212.5T480-180Zm-4-297Z"/></svg>
+                                <span class="hidden dark:block">Light mode</span>
+                                <span class="block dark:hidden">Dark mode</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <div class="main-content flex-auto py-[25px] px-[40px] mb-5 overflow-auto">
+                        <div class="mx-auto max-w-screen-xl">
+                            <h3 class="font-semibold text-prototurk mb-3 leading-relaxed dark:text-white">Put a Value in Yourself</h3>
+                            <p>
+                                For a successful career, you need a proper start. You are ready to make a proper start with Prototürk's courses on various languages and technologies!
+                            </p>
+                        </div>
+                        <div class="row gap-8 overflow-x-auto">
+                            <div class="col-lg-2 col-md-5">
+                                <a href="#" class="group red-border dark:border-gray-700 border-gray-200 hover:!border-red-700 shadow-md shadow-red-400/50 hover:shadow-red-200/50 transition-all flex items-center flex-col px-4 py-7 rounded no-underline">
+                                    <span class="w-24 h-24 red-border border-red-500 rounded-full grid place-items-center mb-4 relative">
+                                        <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-red-500 bg-opacity-10 rounded-full -z-10"></span>
+                                        <i class="fa-brands fa-html5 text-red-700 text-6xl"></i>
+                                    </span>
+                                    <span class="inline-flex items-center justify-center h-10 px-5 bg-red-500 text-white rounded max-w-[125px] group-hover:bg-red-700 transition-colors">HTML</span>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-5">
+                                <a href="#" class="group blue-border dark:border-gray-700 border-gray-200 hover:!border-blue-700 shadow-md shadow-blue-400/50 hover:shadow-blue-200/50 transition-all flex items-center flex-col px-4 py-7 rounded no-underline">
+                                    <span class="w-24 h-24 blue-border border-blue-500 rounded-full grid place-items-center mb-4 relative">
+                                        <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-blue-500 bg-opacity-10 rounded-full -z-10"></span>
+                                        <i class="fa-brands fa-css3-alt tex-blue-700 text-6xl"></i>
+                                    </span>
+                                    <span class="inline-flex items-center justify-center h-10 px-5 bg-blue-500 text-white rounded max-w-[125px] group-hover:bg-blue-700 transition-colors">CSS</span>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-5">
+                                <a href="#" class="group yellow-border dark:border-gray-700 border-gray-200 hover:!border-yellow-700 shadow-md shadow-yellow-400/50 hover:shadow-yellow-200/50 transition-all flex items-center flex-col px-4 py-7 rounded no-underline">
+                                    <span class="w-24 h-24 yellow-border border-yellow-500 rounded-full grid place-items-center mb-4 relative">
+                                        <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-yellow-500 bg-opacity-10 rounded-full -z-10"></span>
+                                        <i class="fa-brands fa-js text-yellow-500 text-6xl"></i>
+                                    </span>
+                                    <span class="inline-flex items-center justify-center h-10 px-5 bg-yellow-500 text-black rounded max-w-[125px] group-hover:bg-yellow-700 transition-colors">Javascript</span>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-5">
+                                <a href="#" class="group indigo-border dark:border-gray-700 border-gray-200 hover:!border-indigo-700 shadow-md shadow-indigo-400/50 hover:shadow-indigo-200/50 transition-all flex items-center flex-col px-4 py-7 rounded no-underline">
+                                    <span class="w-24 h-24 indigo-border border-indigo-500 rounded-full grid place-items-center mb-4 relative">
+                                        <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-indigo-500 bg-opacity-10 rounded-full -z-10"></span>
+                                        <i class="fa-brands fa-php text-indigo-700 text-6xl"></i>
+                                    </span>
+                                    <span class="inline-flex items-center justify-center h-10 px-5 bg-indigo-500 text-white rounded max-w-[125px] group-hover:bg-indigo-700 transition-colors">PHP</span>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-md-5">
+                                <a href="#" class="group blue-border dark:border-gray-700 border-gray-200 hover:!border-blue-700 shadow-md shadow-blue-500/50 hover:shadow-blue-300/50 transition-all flex items-center flex-col px-4 py-7 rounded no-underline">
+                                    <span class="w-24 h-24 blue-border border-blue-900 rounded-full grid place-items-center mb-4 relative">
+                                        <span class="absolute -top-2 -right-2 w-24 h-24 scale-90 bg-blue-900 bg-opacity-10 rounded-full -z-10"></span>
+                                        <img src="img/mysql-official.svg" alt="" class="img-fluid w-20">
+                                    </span>
+                                    <span class="inline-flex items-center justify-center h-10 px-5 bg-blue-900 text-white rounded max-w-[125px] group-hover:bg-blue-950 transition-colors">MySQL</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-github/90 to-github/100 p-4 rounded-md text-white flex flex-col lg:flex-row items-center">
+                        <div class="flex-shrink-0 w-24 pl-0 lg:pl-2 mb-4 lg:mb-0">
+                            <i class="fa-brands fa-github text-5xl"></i>
+                        </div>
+                        <div>
+                            <h6 class="text-xl font-thin mb-1">In GitHub do not forget follow <a href="https://github.com/zaursuleymnv" target="_blank" class="text-white font-semibold no-underline">@zaur.suleymnv</a> account!</h6>
+                        <p class="font-thin text-white/50">Don't forget to follow my github account to reach out my project I build for you!</p>
+                        <a href="https://github.com/zaursuleymnv" target="_blank" class="text-black inline-flex items-center rounded h-11 px-5 mt-4 bg-white shadow-md no-underline">Follow</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- <div class="modal-wrapper" id="LoginModal" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-inner">
+            <h3 class="text-2xl font-semibold mb-4 pb-4 border-b border-gray-200">Log In</h3>
+            <button type="button" class="bg-prototurk text-white rounded px-6 h-10">Close</button>
+        </div>
+    </div> -->
+
+    <div class="modal fade fixed inset-0 flex items-center justify-center bg-prototurk bg-opacity-60" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content dark:bg-gray-900">
+            <div class="modal-header border-b-gray-200 dark:!border-b-gray-100">
+              <h1 class="modal-title fs-5" id="loginModalLabel">Log In</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer border-0">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" ></script>
+
+</body>
+</html>

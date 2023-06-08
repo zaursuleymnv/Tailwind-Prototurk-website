@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    text-decoration: none;
+}
+
+@layer base {
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+    html {
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+@layer components {
+
+    .sidebar-nav-link {
+        @apply flex items-center h-10 rounded px-3 no-underline text-sm text-prototurk dark:text-gray-300 font-medium hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white transition-colors;
+    }
+
+    /* .modal {
+        @apply fixed inset-0 flex items-center justify-center bg-prototurk bg-opacity-60 opacity-0 invisible transition-opacity;
+    } */
+
+    /* .modal-wrapper.active {
+        @apply visible;
+    } */
+
+    /* .modal-inner {
+        @apply max-w-full min-w-[600px] bg-white p-10 rounded-md shadow-gray-800;
+    } */
+
+    .sidebar-nav-link.active {
+        @apply bg-gray-100 dark:bg-gray-800
+    }
+
+    .red-border {
+        border: 1px solid;
+        /* border-color: rgb(239 68 68) */
+    }
+    .yellow-border {
+        border: 1px solid;
+        /* border-color: rgb(239 68 68) */
+    }
+    .pink-border {
+        border: 1px solid;
+        /* border-color: rgb(239 68 68) */
+    }
+    .indigo-border {
+        border: 1px solid;
+        /* border-color: rgb(239 68 68) */
+    }
+    .blue-border {
+        border: 1px solid;
+        /* border-color: rgb(239 68 68) */
+    }
+
+    .sidebar {
+        @apply bg-white dark:bg-gray-900 z-10 flex-shrink-0 absolute lg:relative inset-0 scale-90 lg:scale-100 top-15 lg:top-0 opacity-0 invisible lg:opacity-100 lg:visible transition-all flex flex-col h-full border-r p-2 border-gray-300 dark:border-gray-800 divide-y divide-solid divide-gray-100 dark:divide-gray-800;
+    }
+    .sidebar.active {
+        @apply w-full opacity-100 visible z-10 scale-100
+    }
+}
